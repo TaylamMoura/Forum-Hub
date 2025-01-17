@@ -1,7 +1,8 @@
-package com.alura.forum_hub.Forum;
+package com.alura.forum_hub.Domain.Forum;
 
+import com.alura.forum_hub.DTO.DadosAtualizadosTopicos;
+import com.alura.forum_hub.DTO.DadosForum;
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
 import lombok.*;
 
 import java.sql.Timestamp;
@@ -28,36 +29,6 @@ public class Forum {
     private String autor;
     private String curso;
 
-    public Forum(){}
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public String getMensagem() {
-        return mensagem;
-    }
-
-    public Timestamp getDataCriacao() {
-        return dataCriacao;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public String getAutor() {
-        return autor;
-    }
-
-    public String getCurso() {
-        return curso;
-    }
-
     public Forum(DadosForum dados) {
         this.mensagem = dados.mensagem();
         this.titulo = dados.titulo();
@@ -71,8 +42,7 @@ public class Forum {
         this.status = "respondido";
     }
 
-
-    public void atualizar(@Valid DadosAtualizadosTopicos dados) {
+    public void atualizar(DadosAtualizadosTopicos dados) {
         if(dados.titulo() != null){
             this.titulo = dados.titulo();
         }

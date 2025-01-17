@@ -1,6 +1,5 @@
-package com.alura.forum_hub.Forum;
+package com.alura.forum_hub.DTO;
 
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 
 import java.sql.Timestamp;
@@ -21,6 +20,7 @@ public record DadosForum(
         @NotBlank
         String curso
 ) {
+
     public DadosForum(@NotBlank String titulo, @NotBlank String mensagem, @NotBlank String autor, @NotBlank String curso) {
         this(titulo, mensagem, new Timestamp(System.currentTimeMillis()), autor, curso);
     }
