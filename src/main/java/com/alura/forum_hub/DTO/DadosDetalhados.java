@@ -1,7 +1,11 @@
-package com.alura.forum_hub.Forum;
+package com.alura.forum_hub.DTO;
+
+import com.alura.forum_hub.Domain.Forum.Forum;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.sql.Timestamp;
 
+@JsonPropertyOrder({"id", "titulo", "mensagem", "autor", "curso", "dataCriacao", "status"})
 public record DadosDetalhados(Long id,
                               String titulo,
                               String mensagem,
