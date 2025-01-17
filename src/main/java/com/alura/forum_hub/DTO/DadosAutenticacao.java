@@ -1,4 +1,4 @@
-package com.alura.forum_hub.Domain.Usuario;
+package com.alura.forum_hub.DTO;
 
 public record DadosAutenticacao(String login, String senha) {
 }
